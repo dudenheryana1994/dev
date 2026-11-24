@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_move_form_inherit_timestamps" model="ir.ui.view">
+        <field name="name">account.move.form.timestamps</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Timestamps">
+                    <field name="start_time" readonly="1"/>
+                    <field name="end_time" readonly="1"/>
+                    <field name="duration_minutes" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_golongan_obat_tree" model="ir.ui.view">
+        <field name="name">golongan.obat.tree</field>
+        <field name="model">master.golongan.obat</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="kode"/>
+                <field name="name" string="Nama Golongan"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_golongan_obat_form" model="ir.ui.view">
+        <field name="name">golongan.obat.form</field>
+        <field name="model">master.golongan.obat</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="kode" readonly="1"/>
+                        <field name="name"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_golongan_obat" model="ir.actions.act_window">
+        <field name="name">Daftar Golongan Obat</field>
+        <field name="res_model">master.golongan.obat</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Input data golongan obat Anda di sini.
+            </p>
+        </field>
+    </record>
+
+</odoo>

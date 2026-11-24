@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_form_master_prinsipal" model="ir.ui.view">
+        <field name="name">Master Prinsipal Form</field>
+        <field name="model">master.prinsipal</field>
+        <field name="arch" type="xml">
+            <form string="Master Prinsipal">
+                <sheet>
+                    <group>
+                        <field name="kode" readonly="1"/>
+                        <field name="nama_prinsipal"/>
+                        <field name="sales"/>
+                        <field name="kontak_person" string="Kontak Person"/>
+                        <field name="telp"/>
+                        <field name="email"/>
+                        <field name="alamat"/>
+                        <field name="alamat2"/>
+                        <!-- <field name="alamat_full" readonly="1"/> -->
+                        <field name="koneksi_pemasok_ids" 
+                                context="{'default_prinsipal_id': active_id}" 
+                                domain="[('prinsipal_id', '=', active_id)]" 
+                                widget="one2many_list" 
+                                options="{'reload_on_button': True}" 
+                                mode="tree,form"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_tree_master_prinsipal" model="ir.ui.view">
+        <field name="name">Master Prinsipal Tree</field>
+        <field name="model">master.prinsipal</field>
+        <field name="arch" type="xml">
+            <tree string="Master Prinsipal">
+                <field name="kode"/>
+                <field name="nama_prinsipal"/>
+                <field name="alamat_full"/>
+                <field name="sales"/>
+                <field name="telp"/>
+                <field name="kontak_person" string="No. Handphone"/>
+                <field name="koneksi_pemasok_count" string="Koneksi Prinsipal"/>
+                <button name="action_koneksi_pemasok"
+                        type="object"
+                        icon="fa-building"
+                        class="btn btn-primary"
+                        context="{'default_prinsipal_id': active_id}"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action untuk master_prinsipal -->
+    <record id="action_master_prinsipal" model="ir.actions.act_window">
+        <field name="name">Master Prinsipal</field>
+        <field name="res_model">master.prinsipal</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

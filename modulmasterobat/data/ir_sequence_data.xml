@@ -1,0 +1,90 @@
+<odoo>
+    <!--squence golongan obat-->
+    <record id="seq_golongan_obat" model="ir.sequence">
+        <field name="name">Master Golongan Obat</field>
+        <field name="code">master.golongan.obat</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+    <!--squence penanda obat-->
+     <record id="seq_penanda_obat" model="ir.sequence">
+        <field name="name">Penanda Obat</field>
+        <field name="code">master.penanda.obat</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence satuan komposisi-->
+    <record id="seq_satuan_komposisi" model="ir.sequence">
+        <field name="name">Satuan Komposisi</field>
+        <field name="code">master.satukompo</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence komposisi-->
+    <record id="seq_komposisi" model="ir.sequence">
+        <field name="name">Komposisi</field>
+        <field name="code">master.komposisi</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence satuan barang-->
+    <record id="seq_satuan_barang" model="ir.sequence">
+        <field name="name">Satuan Barang</field>
+        <field name="code">master.satuan.barang</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence klasifikasi-->
+    <record id="seq_master_klasifikasi" model="ir.sequence">
+        <field name="name">Kode Klasifikasi</field>
+        <field name="code">master.klasifikasi</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence prinsipal-->
+    <record id="seq_master_prinsipal" model="ir.sequence">
+        <field name="name">Kode Prinsipal</field>
+        <field name="code">master.prinsipal</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence pemasok-->
+    <record id="seq_master_pemasok" model="ir.sequence">
+        <field name="name">Kode Pemasok</field>
+        <field name="code">master.pemasok</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence regional-->
+    <record id="seq_master_regional" model="ir.sequence">
+        <field name="name">Kode Regional</field>
+        <field name="code">master.regional</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--squence product-->
+    <record id="seq_master_product" model="ir.sequence">
+        <field name="name">Kode Obat</field>
+        <field name="code">master.product</field>
+        <field name="padding">8</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+</odoo>

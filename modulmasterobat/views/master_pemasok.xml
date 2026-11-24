@@ -1,0 +1,100 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_form_master_pemasok" model="ir.ui.view">
+        <field name="name">Master Pemasok Form</field>
+        <field name="model">master.pemasok</field>
+        <field name="arch" type="xml">
+            <form string="Master Pemasok">
+                <sheet>
+                    <group>
+                        <group string="Informasi Utama">
+                            <field name="kode" readonly="1"/>
+                            <field name="nama_pemasok"/>
+                            <field name="bpom"/>
+                            <field name="jenis_pemasok" widget="radio"/>
+                            <field name="alamat"/>
+                        </group>
+                        <group string="Regional">
+                            <field name="kode_pos_id" string= "Kode Regional"/>
+                            <field name="nama_regional" readonly="1"/>
+                            <field name="izin_pemasok"/>
+                            <field name="periode_aktif"/>
+                            <field name="cara_bayar"/>
+                            <field name="tempo"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Kontak">
+                            <field name="apoteker_pj"/>
+                            <field name="nomor_sipa"/>
+                            <field name="tgl_berlaku"/>
+                            <field name="kontak_person"/>
+                            <field name="telp"/>
+                            <field name="no_hp"/>
+                            <field name="email"/>
+                        </group>
+                        <group string="Informasi Lainnya">
+                            <field name="status" widget="radio"/>
+                            <field name="npwp"/>
+                            <field name="nitku"/>
+                            <field name="posisi_ppn" widget="radio"/>
+                            <field name="min_order"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Bank">
+                            <field name="no_rekening"/>
+                            <field name="nama_bank"/>
+                            <field name="atas_nama"/>
+                        </group>
+                        <group string="Seleksi">
+                            <field name="diseleksi_oleh" widget="radio"/>
+                            <field name="daftar_harga" widget="radio"/>
+                            <field name="tdp_nib" widget="radio"/>
+                        </group>
+                    </group>
+
+                    <group string="Sertifikasi">
+                        <field name="copob_cdob" widget="radio"/>
+                        <field name="siup" widget="radio"/>
+                        <field name="kesimpulan" widget="radio"/>
+                    </group>
+
+                    <footer>
+                        <button name="approve" string="Approved" type="object" class="btn-primary"/>
+                        <button name="cancel" string="Batal" type="object" class="btn-danger"/>
+                    </footer>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_tree_master_pemasok" model="ir.ui.view">
+        <field name="name">Master Pemasok Tree</field>
+        <field name="model">master.pemasok</field>
+        <field name="arch" type="xml">
+            <tree string="Master Pemasok">
+                <field name="kode"/>
+                <field name="bpom"/>
+                <field name="nama_pemasok"/>
+                <field name="alamat_full"/>
+                <field name="kontak_person" string="PIC"/>
+                <field name="telp" string="Telepon"/>
+                <field name="tempo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_master_pemasok" model="ir.actions.act_window">
+        <field name="name">Daftar Data Pemasok</field>
+        <field name="res_model">master.pemasok</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="view_id" ref="view_tree_master_pemasok"/> -->
+        <field name="view_id" eval="False"/>
+    </record>
+</odoo>

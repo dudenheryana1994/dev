@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sync_notion_wizard_form" model="ir.ui.view">
+        <field name="name">sync.notion.wizard.form</field>
+        <field name="model">sync.notion.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sync from Notion">
+                <footer>
+                    <button name="sync_now" type="object" class="btn-primary" string="Sync"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sync_notion_wizard" model="ir.actions.act_window">
+        <field name="name">Sync from Notion</field>
+        <field name="res_model">sync.notion.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_sync_notion_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_form_master_regional" model="ir.ui.view">
+        <field name="name">master.regional.form</field>
+        <field name="model">master.regional</field>
+        <field name="arch" type="xml">
+            <form string="Master Regional">
+                <sheet>
+                    <group>
+                        <field name="kode_regional" readonly="1"/>
+                        <field name="name"/>
+                        <field name="pemasok_id" string="Nama Gudang"/>
+                        <field name="kode_gudang" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree/List View -->
+    <record id="view_tree_master_regional" model="ir.ui.view">
+        <field name="name">master.regional.tree</field>
+        <field name="model">master.regional</field>
+        <field name="arch" type="xml">
+            <tree string="Master Regional">
+                <field name="kode_regional"/>
+                <field name="name"/>
+                <field name="kode_gudang"/>
+                <field name="pemasok_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to open master.regional -->
+    <record id="action_master_regional" model="ir.actions.act_window">
+        <field name="name">Master Regional</field>
+        <field name="res_model">master.regional</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_product_komposisi_wizard_form" model="ir.ui.view">
+        <field name="name">product.komposisi.wizard.form</field>
+        <field name="model">product.komposisi.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cari Komposisi Obat" edit="false" create="false">
+                <!-- Header -->
+                <div style="width: 100%; background-color: #875A7B; padding: 8px 12px;">
+                    <h3 style="margin: 0; font-size: 16px; color: white;">
+                        <i class="fa fa-list-ul" style="margin-right: 8px; color: white;"></i>
+                        CARI KOMPOSISI OBAT
+                    </h3>
+                </div>
+                <!-- Input Komposisi -->
+                <group>
+                    <group string="Nama Isi">
+                        <field name="komposisi_ids" widget="many2many_tags"/>
+                    </group>
+                </group>
+
+                <!-- Tabel Hasil -->
+                <field name="hasil_ids" nolabel="1">
+                    <tree create="0" edit="0" delete="0">
+                        <field name="product_id"/>
+                        <field name="prinsipal"/>
+                        <field name="generik"/>
+                        <field name="jenis"/>
+                        <field name="harga_beli"/>
+                    </tree>
+                </field>
+                <!-- Tombol Aksi -->
+                <footer>
+                    <button name="cari_salah_satu" type="object" string=" Memiliki Salah Satu Komposisi" class="btn-primary" icon="fa-search-minus"/>
+                    <button name="cari_komposisi_sama" type="object" string=" Komposisi Sama" class="btn-primary" icon="fa-search-plus"/>
+                    <button special="cancel" string="Tutup" class="btn-secondary" icon="fa-times"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

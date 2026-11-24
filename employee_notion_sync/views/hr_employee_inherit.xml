@@ -1,0 +1,25 @@
+<odoo>
+  <record id="view_employee_form_inherit_custom" model="ir.ui.view">
+    <field name="name">hr.employee.form.inherit.custom</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+      <!-- Tambahan setelah work_email -->
+      <xpath expr="//field[@name='work_email']" position="after">
+        <field name="nik_ktp"/>
+        <field name="telegram_id"/>
+        <field name="telegram_username"/>
+        <field name="card"/>
+      </xpath>
+      <!-- Tambahan setelah departement -->
+      <xpath expr="//field[@name='department_id']" position="after">
+        <field name="team"/>
+      </xpath>
+      <!-- Tambahan setelah coach -->
+      <xpath expr="//field[@name='coach_id']" position="after">
+        <field name="status"/>
+        <field name="salary_per_month"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>

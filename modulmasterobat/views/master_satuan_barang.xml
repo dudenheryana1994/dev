@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_satuan_barang_tree" model="ir.ui.view">
+        <field name="name">satuan.barang.tree</field>
+        <field name="model">master.satuan.barang</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="kode"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_satuan_barang_form" model="ir.ui.view">
+        <field name="name">satuan.barang.form</field>
+        <field name="model">master.satuan.barang</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="kode" readonly="1"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_satuan_barang" model="ir.actions.act_window">
+        <field name="name">Daftar Satuan Barang</field>
+        <field name="res_model">master.satuan.barang</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Input data satuan Barang Anda di sini.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,69 @@
+<odoo>
+    <!-- Root Menu Item -->
+    <menuitem id="menu_modulakuntingcustom_root" name="User Management"/>
+
+    <!-- Tree View -->
+    <record id="view_usage_tree" model="ir.ui.view">
+        <field name="name">usage.tree</field>
+        <field name="model">modulakuntingcustom.usage</field>
+        <field name="arch" type="xml">
+            <tree string="Usage">
+                <field name="username"/>
+                <field name="upload"/>
+                <field name="download"/>
+                <field name="usage"/>
+                <field name="date_in"/>
+                <field name="date_out"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_usage_form" model="ir.ui.view">
+        <field name="name">usage.form</field>
+        <field name="model">modulakuntingcustom.usage</field>
+        <field name="arch" type="xml">
+            <form string="Usage" create="false" edit="false">
+                <header>
+                    <!-- Tombol untuk sinkronisasi data -->
+                    <button name="action_sync_data" type="object" string="Sync Data" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="username"/>
+                        <field name="upload"/>
+                        <field name="download"/>
+                        <field name="usage"/>
+                        <field name="date_in"/>
+                        <field name="date_out"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_usage" model="ir.actions.act_window">
+        <field name="name">Usage</field>
+        <field name="res_model">modulakuntingcustom.usage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_modulakuntingcustom_usage" name="Usage" parent="menu_modulakuntingcustom_root" action="action_usage" sequence="2"/>
+
+    <!-- Search View -->
+    <record id="view_usage_search" model="ir.ui.view">
+        <field name="name">usage.search</field>
+        <field name="model">modulakuntingcustom.usage</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Field yang bisa dicari -->
+                <field name="username"/>
+                <field name="date_in"/>
+                <field name="date_out"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

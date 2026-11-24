@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_master_golongan_obat,access_master_golongan_obat,model_master_golongan_obat,base.group_user,1,1,1,1
+access_master_penanda_obat,access_master_penanda_obat,model_master_penanda_obat,base.group_user,1,1,1,1
+access_master_satukompo,access.master.satukompo,model_master_satukompo,base.group_user,1,1,1,1
+access_master_komposisi,access.master.komposisi,model_master_komposisi,base.group_user,1,1,1,1
+access_master_satuan_barang,access.master.satuan.barang,model_master_satuan_barang,base.group_user,1,1,1,1
+access_master_klasifikasi,access.master.klasifikasi,model_master_klasifikasi,base.group_user,1,1,1,1
+access_master_prinsipal,access.master.prinsipal,model_master_prinsipal,base.group_user,1,1,1,1
+access_master_pemasok,access.master.pemasok,model_master_pemasok,base.group_user,1,1,1,1
+access_koneksi_pemasok,access.koneksi.pemasok,model_koneksi_pemasok,base.group_user,1,1,1,1
+access_master_regional,access.master.regional,model_master_regional,base.group_user,1,1,1,1
+access_master_product,access.master.product,model_master_product,base.group_user,1,1,1,1
+access_master_product_komposisi_line,access.master.product.komposisi.line,model_master_product_komposisi_line,,1,1,1,1
+access_master_product_persamaan_line,access.master.product.persamaan.line,model_master_product_persamaan_line,,1,1,1,1
+access_product_komposisi_wizard,access.product.komposisi.wizard,model_product_komposisi_wizard,,1,1,1,1
+access_product_komposisi_wizard_hasil,access.product.komposisi.wizard.hasil,model_product_komposisi_wizard_hasil,,1,1,1,1

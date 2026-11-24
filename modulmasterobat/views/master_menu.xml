@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Menu Utama Tanpa Aksi, hanya sebagai kategori untuk sub-menu -->
+    <menuitem id="menu_master" name="Master" sequence="1"/>
+
+    <!-- Submenu "Golongan Obat" yang akan berfungsi sebagai dropdown -->
+    <menuitem id="menu_master_golongan" name="Menu" parent="menu_master" sequence="1"/>
+
+    <!-- Submenu "Daftar Golongan Obat" yang mengarah ke action "Golongan Obat" -->
+    <menuitem id="menu_golongan_obat" name="Daftar Golongan Obat" parent="menu_master_golongan" action="action_golongan_obat" sequence="2"/>
+
+    <!-- Submenu "Daftar Penanda Obat" yang mengarah ke action "Penanda Obat" -->
+    <menuitem id="menu_penanda_obat" name="Daftar Penanda Obat" parent="menu_master_golongan" action="action_penanda_obat" sequence="3"/>
+
+    <!-- Submenu "Daftar Penanda Obat" yang mengarah ke action "Satuan Komposisi" -->
+    <menuitem id="menu_satuan_komposisi" name="Daftar Satuan Komposisi" parent="menu_master_golongan" action="action_satuan_komposisi" sequence="4"/>
+
+    <!-- Submenu "Daftar Penanda Obat" yang mengarah ke action "Komposisi" -->
+    <menuitem id="menu_komposisi" name="Daftar Generik | Komposisi" parent="menu_master_golongan" action="action_komposisi" sequence="5"/>
+
+    <!-- Submenu "Daftar Penanda Obat" yang mengarah ke action "Satuan Barang" -->
+    <menuitem id="menu_satuan_barang" name="Daftar Satuan Barang" parent="menu_master_golongan" action="action_satuan_barang" sequence="6"/>
+
+    <!-- Submenu yang mengarah ke action "Klasifikasi" -->
+    <menuitem id="menu_klasifikasi" name="Daftar Klasifikasi Pelanggan" parent="menu_master_golongan" action="action_klasifikasi" sequence="7"/>
+
+    <!-- Submenu yang mengarah ke action "Prinsipal" -->
+    <menuitem id="menu_master_prinsipal" name="Daftar Prinsipal" parent="menu_master_golongan" action="action_master_prinsipal" sequence="8"/>
+
+    <!-- Submenu yang mengarah ke action "Pemasok" -->
+    <menuitem id="menu_master_pemasok" name="Daftar Pemasok" parent="menu_master_golongan" action="action_master_pemasok" sequence="9"/>
+
+    <!-- Submenu yang mengarah ke action "Regional" -->
+    <menuitem id="menu_master_regional" name="Daftar Regional" parent="menu_master_golongan" action="action_master_regional" sequence="10"/>
+
+    <!-- Submenu yang mengarah ke action "Product" -->
+    <menuitem id="menu_master_product" name="Master Poduct" parent="menu_master_golongan" action="action_master_product" sequence="11"/>
+
+</odoo>

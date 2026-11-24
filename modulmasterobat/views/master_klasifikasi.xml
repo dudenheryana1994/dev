@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_master_klasifikasi_tree" model="ir.ui.view">
+        <field name="name">master.klasifikasi.tree</field>
+        <field name="model">master.klasifikasi</field>
+        <field name="arch" type="xml">
+            <tree string="Daftar Klasifikasi Pelanggan">
+                <field name="kode"/>
+                <field name="nama_klasifikasi"/>
+                <field name="cara_bayar"/>
+                <field name="status" widget="statusbar"/>
+                <field name="periode_aktif"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_master_klasifikasi_form" model="ir.ui.view">
+        <field name="name">master.klasifikasi.form</field>
+        <field name="model">master.klasifikasi</field>
+        <field name="arch" type="xml">
+            <form string="Master Klasifikasi">
+                <sheet>
+                    <group>
+                        <field name="kode" readonly="1"/>
+                        <field name="nama_klasifikasi"/>
+                        <field name="cara_bayar"/>
+                        <field name="status" readonly="1"/>
+                        <field name="periode_aktif"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_klasifikasi" model="ir.actions.act_window">
+        <field name="name">Master Klasifikasi</field>
+        <field name="res_model">master.klasifikasi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

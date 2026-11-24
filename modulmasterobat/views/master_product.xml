@@ -1,0 +1,85 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_product_obat_form_custom" model="ir.ui.view">
+        <field name="name">master.product.form.custom</field>
+        <field name="model">master.product</field>
+        <field name="arch" type="xml">
+            <form string="Master Data Obat" class="o_form_custom">
+                <sheet>
+                    <group col="2">
+                        <group col="2">
+                            <field name="kode" required="1"/>
+                            <field name="nama"/>
+                            <field name="prinsipal_id"/>
+                            <field name="jenis_generik"/>
+                            <field name="klasifikasi_id"/>
+                            <field name="kontinuitas"/>
+                            <field name="lkpp"/>
+                            <field name="prb"/>
+                        </group>
+
+                        <group col="4">
+                            <field name="satuan_id"/>
+                            <field name="harga_beli" widget="integer"/>
+                            <field name="harga_jual" readonly="1" widget="integer"/>
+                            <field name="isi" widget="integer"/>
+                            <field name="satuan_beli" readonly="1" widget="integer"/>
+                            <field name="satuan_jual" readonly="1" widget="integer"/>
+                            <field name="status_validasi"/>
+                            <field name="active"/>
+                        </group>
+
+                    </group>
+
+                    <separator string="Komposisi"/>
+                    <button name="open_komposisi_wizard"
+                            type="object"
+                            string="Cari Persamaan"
+                            class="btn btn-primary" icon="fa-search"
+                            context="{'form_view_ref': 'view_product_obat_form_custom'}"/>
+                    <field name="komposisi_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="komposisi_id"/>
+                            <field name="dosis"/>
+                            <field name="satukompo_id"/>
+                        </tree>
+                    </field>
+
+                    <separator string="Persamaan"/>
+                    <field name="persamaan_line_ids" nolabel="1" readonly="1">
+                        <tree editable="bottom">
+                            <field name="produk_persamaan_id" string="Barang Persamaan"/>
+                            <field name="harga_beli" string="Harga Beli" widget="char"/>
+                            <field name="isi" string="Isi" widget="char"/>
+                            <field name="harga_jual" string="Harga Jual" widget="char"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_product_obat_tree" model="ir.ui.view">
+        <field name="name">master.product.tree</field>
+        <field name="model">master.product</field>
+        <field name="arch" type="xml">
+            <tree string="Data Dasar Obat &amp; AKSP">
+                <field name="kode"/>
+                <field name="nama"/>
+                <field name="prinsipal_id"/>
+                <field name="jenis_generik"/>
+                <field name="status_validasi"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_master_product" model="ir.actions.act_window">
+        <field name="name">Data Dasar Obat &amp; AKSP</field>
+        <field name="res_model">master.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[(&quot;status_validasi&quot;, &quot;=&quot;, &quot;draft&quot;)]</field>
+    </record>
+</odoo>

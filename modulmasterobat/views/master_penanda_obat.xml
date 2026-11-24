@@ -1,0 +1,43 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_penanda_obat_tree" model="ir.ui.view">
+        <field name="name">penanda.obat.tree</field>
+        <field name="model">master.penanda.obat</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="kode"/>
+                <field name="name"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_penanda_obat_form" model="ir.ui.view">
+        <field name="name">penanda.obat.form</field>
+        <field name="model">master.penanda.obat</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="kode" readonly="1"/>
+                        <field name="name"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_penanda_obat" model="ir.actions.act_window">
+        <field name="name">Daftar Penanda Obat</field>
+        <field name="res_model">master.penanda.obat</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Input data penanda obat Anda di sini.
+            </p>
+        </field>
+    </record>
+</odoo>

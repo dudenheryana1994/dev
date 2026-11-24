@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_komposisi_tree" model="ir.ui.view">
+        <field name="name">komposisi.tree</field>
+        <field name="model">master.komposisi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="kode"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_komposisi_form" model="ir.ui.view">
+        <field name="name">komposisi.form</field>
+        <field name="model">master.komposisi</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="kode" readonly="1"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_komposisi" model="ir.actions.act_window">
+        <field name="name">Daftar Generik | Komposisi</field>
+        <field name="res_model">master.komposisi</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Input data satuan komposisi Anda di sini.
+            </p>
+        </field>
+    </record>
+</odoo>
